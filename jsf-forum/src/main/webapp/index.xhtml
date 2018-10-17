@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Principal</title>
+</h:head>
+
+<h:body>
+	<div style="margin-left: 1%; margin-right: 1%">
+		<div align="center">
+
+			<p:panel id="head" header="Sistema de Criticas"
+				style="border-style: none;" />
+		</div>
+
+
+		<div align="right">
+			<h:form>
+				<p:growl id="messages" />
+				<p:splitButton value="Olá, #{login.usuario}">
+					<p:menuitem value="Cadastrar" action="cadastrar" update="messages"
+						icon="ui-icon-disk" />
+					<p:separator />
+					<p:menuitem value="Logar" action="#{login.doLogout}"
+						icon="ui-icon-extlink" />
+				</p:splitButton>
+			</h:form>
+		</div>
+
+		<h:form>
+			<p:dataTable value="#{alunoController.listagemDeAlunos}" var="l"
+				paginator="true" rows="9">
+
+				<p:column headerText="Nome" sortBy="#{l.nome}" filterBy="#{l.nome}">
+					<f:facet name="header">Nome</f:facet>			
+                  #{l.nome}
+              </p:column>
+
+				<p:column headerText="sobreNome" sortBy="#{l.sobrenome}"
+					filterBy="#{l.sobrenome}">
+					<f:facet name="header">Sobrenome</f:facet>
+                  #{l.sobrenome}
+              </p:column>
+
+				<p:column headerText="nomeProfessor" sortBy="#{l.professor.nome}"
+					filterBy="#{l.professor.nome}">
+					<f:facet name="header">Professor</f:facet>		
+                  #{l.professor.nome}
+                  </p:column>
+
+				<p:column headerText="nomeProfessor" sortBy="#{l.professor.nome}"
+					filterBy="#{l.professor.materia}">
+					<f:facet name="header">Materia</f:facet>
+                  #{l.professor.materia}
+              </p:column>
+
+				<p:column>
+					<f:facet name="header">Ações</f:facet>
+					<p:commandButton action="#{cadastroController.redirectToEdit(l.id)}" value="Editar" ajax="false"/>
+					<p:commandButton action="#{cadastroController.remover(l.id)}"
+						value="Excluir" immediate="true" ajax="false"/>
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</div>
+</h:body>
+</html>

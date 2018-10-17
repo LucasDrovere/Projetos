@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:dataTable value="#{livro.listaDeLivros}" var="l" paginator="true"
+				rows="7">
+
+				<p:column headerText="titulo" sortBy="#{l.titulo}" filterBy="#{l.titulo}">
+					<f:facet name="header">Titulo</f:facet>			
+                  #{l.titulo}
+              </p:column>
+
+				<p:column headerText="data_publicacao" sortBy="#{l.data_publicacao}" filterBy="#{l.data_publicacao}">
+					<f:facet name="header">Data de Publicação</f:facet>			
+                  #{l.data_publicacao}
+              </p:column>
+
+				<p:column headerText="nomeAutor" sortBy="#{l.autorDto.nome}"
+					filterBy="#{l.autorDto.nome}">
+					<f:facet name="header">Autor</f:facet>		
+                  #{l.autorDto.nome}
+                  </p:column>
+
+				<p:column headerText="nomeGenero" sortBy="#{l.categoriaDto.descricao}"
+					filterBy="#{l.categoriaDto.descricao}">
+					<f:facet name="header">Categoria</f:facet>
+                  #{l.categoriaDto.descricao}
+              </p:column>
+
+				<p:column>
+					<f:facet name="header">Ações</f:facet>
+					<p:commandButton action="#{livro.redirectToEdit(l.id)}"
+						value="Editar" ajax="false" />
+					<p:commandButton action="#{livro.remover(l.id)}" value="Excluir"
+						immediate="true" ajax="false" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>

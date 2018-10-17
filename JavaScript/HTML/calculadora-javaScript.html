@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <script type="text/javascript">
+      function digaOi(){
+        alert('Oi');
+      }
+
+      //digaOi(); chama o metodo 
+
+      function calculadora() {    
+               var v1 = parseFloat(document.getElementById('v1').value);    
+               var v2 = parseFloat(document.getElementById('v2').value);    
+               var result = 0;  
+
+               if (document.getElementsByName('op')[0].checked) {    
+                   result = v1 + v2;  
+               }    
+               if (document.getElementsByName('op')[1].checked) {    
+                   result = v1 - v2;    
+               }    
+               if (document.getElementsByName('op')[2].checked) {    
+                   result = v1 * v2;    
+               }    
+               if (document.getElementsByName('op')[3].checked) {    
+                   result = v1 / v2;    
+               }    
+               document.getElementById('result').value = result;    
+            }    
+
+    </script>
+  </head>
+
+  <body>
+   
+    <form name="calc">  
+      
+      <input type="text" name="visor"/> <br>
+      
+      <input type="button" value="9" onclick="botao( value )">
+      <input type="button" value="8" onclick="botao( value )">
+      <input type="button" value="7" onclick="botao( value )">
+
+      <input type="button" value="6" onclick="botao( value )">
+      <input type="button" value="5" onclick="botao( value )">
+      <input type="button" value="4" onclick="botao( value )">
+
+      <input type="button" value="3" onclick="botao( value )">
+      <input type="button" value="2" onclick="botao( value )">
+      <input type="button" value="1" onclick="botao( value )">
+      
+
+    </form> 
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

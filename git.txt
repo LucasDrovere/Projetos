@@ -1,0 +1,19 @@
+git add .
+git commit -m "msg de commit"
+se for o meu projeto //git push origin master
+
+
+baixa o projeto do amiguinho
+git clone "link"
+
+baixar a ultima versao do projeto remoto
+git fetch origin
+
+mescla o projeto local com o remoto
+git merge origin/master
+
+
+
+
+ele faz fetch e merge junto
+git pull origin master acho que é

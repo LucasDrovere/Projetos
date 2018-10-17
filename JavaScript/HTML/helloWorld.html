@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <script type="text/javascript">
+    	function digaOi(){
+    		alert('Oi');
+    	}
+
+    	//digaOi(); chama o metodo 
+
+
+    	function aoPerderOFoco(){
+    		var elFoco = document.getElementById('elementoFoco');
+    		elFoco.style.display = "";
+    		elFoco.style.color = 
+    			elFoco.style.color == "red" ? "green" : "red";
+    	}
+
+
+    </script>
+
+
+  </head>
+
+  <body>
+   
+   	<div align="center">
+		<input type="text" onblur="aoPerderOFoco();">
+			
+			<span id="elementoFoco" style="color: green; display: none;">perdendo o foco</span>
+
+    	<button onclick="digaOi();">
+      		Diga Oi
+    	</button>
+
+
+	</div>
+
+
+  </body>
+
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:dataTable value="#{filme.listaDeFilmes}" var="l" paginator="true"
+				rows="7">
+
+				<p:column headerText="nome" sortBy="#{l.nome}" filterBy="#{l.nome}">
+					<f:facet name="header">Nome</f:facet>			
+                  #{l.nome}
+              </p:column>
+
+				<p:column headerText="ano" sortBy="#{l.ano}" filterBy="#{l.ano}">
+					<f:facet name="header">Ano</f:facet>			
+                  #{l.ano}
+              </p:column>
+
+				<p:column headerText="nomeDiretor" sortBy="#{l.diretordto.nome}"
+					filterBy="#{l.diretordto.nome}">
+					<f:facet name="header">Diretor</f:facet>		
+                  #{l.diretordto.nome}
+                  </p:column>
+
+				<p:column headerText="nomeGenero" sortBy="#{l.generodto.nome}"
+					filterBy="#{l.generodto.nome}">
+					<f:facet name="header">Genero</f:facet>
+                  #{l.generodto.nome}
+              </p:column>
+
+				<p:column>
+					<f:facet name="header">Ações</f:facet>
+					<p:commandButton
+						action="#{filme.redirectToEdit(l.id)}" value="Editar"
+						ajax="false" />
+					<p:commandButton action="#{filme.remover(l.id)}"
+						value="Excluir" immediate="true" ajax="false" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

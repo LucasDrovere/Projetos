@@ -1,0 +1,48 @@
+CREATE TABLE sala.aluno
+(
+ 
+id serial NOT NULL,
+ 
+nome character varying(100) NOT NULL,
+ 
+sobrenome character varying(100) NOT NULL,
+ 
+idprofessor integer,
+ 
+CONSTRAINT aluno_pkey PRIMARY KEY (id),
+
+CONSTRAINT aluno_idprofessor_fkey FOREIGN KEY (idprofessor)
+    
+REFERENCES sala.professor (id) MATCH SIMPLE
+    
+ON UPDATE NO ACTION ON DELETE NO ACTION
+
+);
+
+CREATE TABLE sala.professor
+(
+ 
+id serial NOT NULL,
+
+nome character varying(100) NOT NULL,
+
+materia character varying(100) NOT NULL,
+ 
+CONSTRAINT professor_pkey PRIMARY KEY (id)
+
+);
+
+CREATE TABLE sala.usuario
+(
+ 
+id serial NOT NULL,
+ 
+nome character varying(100) NOT NULL,
+ 
+usuario character varying(100) NOT NULL,
+ 
+senha character varying(100) NOT NULL,
+ 
+CONSTRAINT usuario_usuario_key UNIQUE (usuario)
+
+);

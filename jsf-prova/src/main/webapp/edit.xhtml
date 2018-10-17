@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="content">
+
+		<h:form>
+			<div align="center">
+				<h:inputHidden value="#{livro.livroDto.id}" />
+
+				<p:panel header="Editar Livro">
+					<p:messages />
+
+					<h:panelGrid columns="2" columnClasses="label, value">
+
+						<h:outputText value="Titulo: " />
+						<p:inputText id="titulo" value="#{livro.livroDto.titulo}" required="true"
+							requiredMessage="Campo Nome Obrigatorio!">
+							<f:validateLength id="titulo" minimum="2" maximum="100"></f:validateLength>
+						</p:inputText>
+
+						<h:outputText value="Data de Publicação: " />
+						<p:inputText id="data_P" value="#{livro.livroDto.data_publicacao}" required="true"
+							requiredMessage="Campo Sobrenome Obrigatorio!">
+							<f:convertDateTime value="#{livro.livroDto.data_publicacao}"/>
+							<f:validateLength id="data_P" minimum="2" maximum="100"></f:validateLength>
+						</p:inputText>
+
+						
+						<h:outputText value="Autor: " />
+						<h:selectOneMenu id="autor" value="#{livro.livroDto.idAutor}">
+							<f:selectItems value="#{livro.autores}" var="a" itemValue="#{a.id}"
+								itemLabel="#{a.nome}" />
+						</h:selectOneMenu>
+
+						<h:outputText value="Categoria: " />
+						<h:selectOneMenu id="categoria" value="#{livro.livroDto.idCategoria}">
+							<f:selectItems value="#{livro.categorias}" var="c" itemValue="#{c.id}"
+								itemLabel="#{c.descricao}" />
+						</h:selectOneMenu>
+						
+					</h:panelGrid>
+
+					<h:commandButton value="Salvar"
+						action="#{livro.alterar}" />
+				</p:panel>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

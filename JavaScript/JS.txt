@@ -1,0 +1,380 @@
+Inicio
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Ola Teste"'>Click Me!</button>
+
+</body>
+</html>
+
+Lampada
+--------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
+</body>
+</html>
+
+css
+---------------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+
+
+</body>
+</html> 
+
+------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Click Me!</button>
+
+</body>
+</html>
+
+------------------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript in Body</h2>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>
+
+</body>
+</html> 
+
+usando funcao
+-------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+
+<body>
+
+<h2>JavaScript in Head</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html> 
+
+
+passando o script no meio
+-----------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript in Body</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+
+</body>
+</html> 
+
+---------EXERCICIOS W3SCHOOL----------
+
+-----------------JS VARIABLE--------------------
+1.1 var carName = "Volvo";
+1.2 var x = 50
+1.3 var x = 5; 
+	var y = 10;
+	document.getElementById("demo").innerHTML = x + y;
+1.4 var x = 5;
+var y = 10;
+var z = x + y;
+alert(z);
+1.5 var firstName = "John", lastName = ,"Doe" age = 35;
+
+---------------JS OPERATORS-----------------------
+1.1 alert(10 * 5);
+1.2 alert(10 / 2);
+1.3 alert(15 % 9);
+1.4 x = 10; y = 5; x += y;
+1.5 x = 10; y = 5; x *= y;
+
+------------------JS FUNCTIONS---------------------
+1.1 function myFunction() {
+  alert("Hello World!");
+}
+myFunction();
+
+1.2 function myFunction(){
+ alert("Hello World!");
+}
+
+1.3 function myFunction() {
+return "Hello";
+}
+document.getElementById("demo").innerHTML = myFunction();
+
+1.4 function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello";
+}
+
+------------------------JS OBJECTS---------------------
+1.1 var person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+alert(person.firstName);
+
+1.2  var person = {
+  firstName: "John",
+  lastName: "Doe", 
+  country: "Norway"
+};
+
+1.3 var person = {
+  name: "John", 
+  age: 50
+};
+alert(person.name + " is " + person.age);
+
+--------------------JS EVENTS-----------------------
+1.1 <button onclick="alert('Hello')">Click me.</button>
+1.2 <button onclick="myFunction()">Click me.</button>
+1.3 <div onmouseover="this.style.backgroundColor='red'">myDIV.</div>
+
+-------------------JS STRING------------------
+1.1 var txt = "Hello World!";
+var x = txt.length;
+alert(x);
+1.2 var txt = "We are \"Vikings\"";
+alert(txt);
+1.3 var str1 = "Hello ";
+var str2 = "World!";
+alert(str1 + str2);
+1.4 var txt = "abcdefghijklm";
+var pos = txt.indexOf("h");
+1.5 var txt = "I can eat bananas all day";
+var x = txt.slice(10, 17);
+1.6 var txt = "Hello World";
+txt = txt.replace("World", "Welcome");
+1.7 var txt = "Hello World";
+txt = txt.toUpperCase();
+1.8 var txt = "Hello World";
+txt = txt.toLowerCase();
+1.9 var str1 = "Hello ";
+var str2 = "World!";
+var result = str1.concat(str2);
+
+--------------------------JS ARRAYS-----------------------
+1.1 var cars = ["Saab", "Volvo", "BMW"];
+var x = cars[1];
+1.2 var cars = ["Volvo", "Jeep", "Mercedes"];
+cars[0] = "Ford";
+1.3 var cars = ["Volvo", "Jeep", "Mercedes"];
+alert(cars.length);
+1.4 var fruits = ["Banana", "Orange", "Apple"];
+fruits.pop();
+1.5 var fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Kiwi");
+1.6 var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+fruits.splice(1, 2);
+1.7 var girls = ["Cecilie", "Lone"];
+var boys = ["Emil", "Tobias", "Linus"];
+var children = girls.concat(boys);
+1.8 var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+fruits.sort();
+
+----------------------JS DATES--------------------------
+1.1 var d = new Date();
+alert(d);
+1.2 var d = new Date();
+year = d.getFullYear();
+1.3 var d = new Date();
+month = d.getMonth();
+1.4 var d = new Date();
+d.setFullYear(2020);
+
+----------------------JS MATH----------------------------
+
+1.1 var r = Math.random();
+1.2 var x = Math.max(10, 20);
+1.3 var x = Math.round(5.3);
+1.4 var x = Math.sqrt(9);
+
+---------------------JS COMPARISONS--------------------------
+
+1.1 x = 10;
+y = 5;
+alert(x > y);
+
+1.2 x = 10;
+y = 10;
+alert(x == y);
+
+1.3 x = 10;
+y = 5;
+alert(x != y);
+
+1.4 var age = n;
+var voteable = (age < 18) ? "Too young" : "Old enough";
+alert(voteable);
+
+----------------JS CONDITIONS ---------------------
+
+1.1 if (x > y){
+  alert("Hello World");
+}
+
+1.2 if (x > y) {
+  alert("Hello World");
+} 
+else {
+  alert("Goodbye");
+}
+
+-------------------JS SWITCH----------------------
+
+1.1 
+switch(fruits) {  
+case "Banana":
+    alert("Hello")
+    break;  
+case "Apple":
+    alert("Welcome")
+    break;    
+}
+1.2 switch(fruits) {
+  case "Banana":
+    alert("Hello")
+    break;
+  case "Apple":
+    alert("Welcome")
+    break;  
+default:
+	alert("Neither");
+}
+
+-----------------------JS LOOPS-------------------
+1.1 var i;
+for (i = 0; i < 10; i++) {
+  console.log(i);
+}
+1.2 var fruits = ["Apple", "Banana", "Orange"];
+for (x in fruits) {
+  console.log(x);
+}
+1.3 var i = 0;
+while (i < 10) {
+  console.log(i);
+  i++
+}
+1.4 var i = 0;
+while (i < 10) {
+  console.log(i);  
+i = i + 1;
+}
+1.5 for (i = 0; i < 10; i++) {
+  console.log(i);
+  if (i == 5) {    
+break;
+  }
+}
+1.6 for (i = 0; i < 10; i++) {
+  if (i == 5) { 
+continue;
+  }
+  console.log(i);
+}
+
+----------------------------JS HTML DOM-------------------------
+
+1.1 <p id="demo"><p>
+<script>
+document.getElementById("demo").innerHTML = "Hello"";
+</script>
+1.2 <p id="demo"><p>
+<script>
+document.getElementsByTagName("p")[0].innerHTML = "Hello";
+</script>
+1.3 <p class="test"><p>
+<p class="test"><p>
+<script>
+document.getElementsByClassName("test")[0].innerHTML = "Hello";
+</script>
+1.4 <img id="image" src="smiley.gif"><p>
+<script>
+document.getElementById("image").src = "pic_mountain.jpg";
+</script>
+1.5 <input type="text" id="myText" value="Hello"><p>
+<script>
+document.getElementById("myText").value = "Hello";
+</script>
+1.6 
+<p id="demo"><p>
+<script>
+document.getElementById("demo").style.color = "red";
+</script>
+1.7 <p id="demo"><p>
+<script>
+document.getElementById("demo").style.fontSize = "40px";
+</script>
+1.8<p id="demo"><p>
+<script>
+document.getElementById("demo").style.display = "none";
+</script>
+1.9 <button id="demo">Click me1<button>
+<script>
+document.getElementById("demo").addEventListener("click", myFunction);
+</script>

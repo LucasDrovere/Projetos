@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Cadastrar Usuario</title>
+</h:head>
+
+<h:body>
+	<div align="center">
+		<p:panel id="head" header="Sistema de Alunos"
+			style="border-style: none;" />
+		<h:form>
+
+			<p:panel header="Cadastro de Usuarios"
+				style="margin-left: 25%; margin-right:25%;margin-top:100px; width: 30%;">
+				<p:messages />
+
+				<h:panelGrid columns="2" columnClasses="label, value">
+
+					<p:outputLabel for="nome" value="Nome:" />
+					<p:inputText id="nome" value="#{usuarioController.usuarioDTO.nome}"
+						required="true" requiredMessage="Campo Nome Obrigatorio!">
+						<f:validateLength id="nome" minimum="2" maximum="20" />
+					</p:inputText>
+
+					<p:outputLabel for="usuario" value="Usuario:" />
+					<p:inputText id="usuario"
+						value="#{usuarioController.usuarioDTO.usuario}" required="true"
+						requiredMessage="Campo Usuario Obrigatorio!">
+						<f:validateLength id="usuario" minimum="2" maximum="10" />
+					</p:inputText>
+
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha"
+						value="#{usuarioController.usuarioDTO.senha}" label="Senha"
+						required="true" requiredMessage="Campo Senha Obrigatorio!">
+						<f:validateLength id="senha" minimum="3" maximum="20" />
+					</p:password>
+
+				</h:panelGrid>
+
+				<h:commandButton value="Cadastrar"
+					action="#{usuarioController.salvar}" />
+			</p:panel>
+		</h:form>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Filmes</title>
+</h:head>
+
+<h:body>
+
+	<h1>LISTA DE FILMES</h1>
+	<h:dataTable value="#{filmeController.listagemFilmes}" var="filmeDto">
+
+		<h:column>
+			<!-- column header -->
+			<f:facet name="header">ID</f:facet>
+			<!-- row record -->
+			<h:outputText value="#{filmeDto.id}" />
+		</h:column>
+
+		<h:column>
+			<!-- column header -->
+			<f:facet name="header">Nome</f:facet>
+			<!-- row record -->
+			<h:outputText value="#{filmeDto.nome}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Diretor</f:facet>
+			<h:outputText value="#{filmeDto.diretorDTO.nome}" />
+		</h:column>
+		
+		
+		<h:column>
+			<f:facet name="header">Genero</f:facet>
+			<h:outputText value="#{filmeDto.generoDTO.nome}" />
+		</h:column>
+
+		<h:column>
+			<h:form>
+				<h:commandButton value="ALTERAR"
+					action="#{filmeController.alterar(filmeDto)}" />
+				<h:commandButton value="EXCLUIR"
+					action="#{filmeController.remover(filmeDto)}" />
+			</h:form>
+		</h:column>
+		
+	</h:dataTable>
+
+</h:body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+<script type="text/javascript">
+  function botao( num ){
+  var salvo = document.getElementById('visor').value;
+  document.getElementById('visor').value = salvo + num;
+}
+
+function reset(){
+
+}
+
+function calcule(){
+  var tela = document.getElementById('visor').value;
+  document.getElementById('visor').value = eval(tela);
+}
+
+</script>
+  </head>
+
+  <body>
+    <form name="calc">  
+
+      <div align="center">
+
+      <fieldset style = "width: 15%;">
+      <h2> Calculadora </h2>
+      <input type="text" id="visor"/> <br>
+
+      <p>
+      <input type="button" value="9" onclick="botao( value )">
+      <input type="button" value="8" onclick="botao( value )">
+      <input type="button" value="7" onclick="botao( value )">
+      <input type="button" value="-" onclick="botao( value )">
+      </p>
+
+      <p>
+      <input type="button" value="4" onclick="botao( value )">
+      <input type="button" value="5" onclick="botao( value )">
+      <input type="button" value="6" onclick="botao( value )">
+      <input type="button" value="+" onclick="botao( value )">
+      </p>
+
+      <p>
+      <input type="button" value="1" onclick="botao( value )">
+      <input type="button" value="2" onclick="botao( value )">
+      <input type="button" value="3" onclick="botao( value )">
+      <input type="button" value="*" onclick="botao( value )">
+      </p>
+
+      <p>
+      <input type="button" value="0" onclick="botao( value )">
+      <input type="button" value="C" onclick="reset()">
+      <input type="button" value="=" onclick="calcule()">
+      <input type="button" value="/" onclick="botao( value )">
+      </p>
+      </fieldset>
+
+      </div>
+
+    </form> 
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

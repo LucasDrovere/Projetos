@@ -1,0 +1,20 @@
+criar schema blog
+
+CREATE TABLE blog.imagem
+(
+  id serial NOT NULL,
+  arquivo character varying(100) NOT NULL,
+  id_post integer NOT NULL,
+  CONSTRAINT pk_imagem PRIMARY KEY (id),
+  CONSTRAINT fk_post_imagem FOREIGN KEY (id_post)
+      REFERENCES blog.post (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+
+CREATE TABLE blog.post
+(
+  id serial NOT NULL,
+  texto character varying(1000) NOT NULL,
+  data timestamp without time zone NOT NULL,
+  CONSTRAINT pk_post PRIMARY KEY (id)
+)
